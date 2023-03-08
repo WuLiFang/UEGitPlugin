@@ -196,6 +196,11 @@ static bool RunCommandInternal(const FString& InCommand, const FString& InPathTo
 
 FString FindGitBinaryPath()
 {
+	FString PathFromEnv(FPlatformMisc::GetEnvironmentVariable(TEXT("GIT_EXECUTABLE")))
+	if (PathFromEnv != "") {
+		return PathFromEnv
+	}
+
 #if PLATFORM_WINDOWS
 	// 1) First of all, look into standard install directories
 	// NOTE using only "git" (or "git.exe") relying on the "PATH" envvar does not always work as expected, depending on the installation:
