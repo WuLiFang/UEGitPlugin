@@ -194,9 +194,9 @@ static bool RunCommandInternal(const FString& InCommand, const FString& InPathTo
 
 FString FindGitBinaryPath()
 {
-	FString PathFromEnv(FPlatformMisc::GetEnvironmentVariable(TEXT("GIT_EXECUTABLE")))
+	FString PathFromEnv(FPlatformMisc::GetEnvironmentVariable(TEXT("GIT_EXECUTABLE")));
 	if (PathFromEnv != "") {
-		return PathFromEnv
+		return PathFromEnv;
 	}
 
 #if PLATFORM_WINDOWS
