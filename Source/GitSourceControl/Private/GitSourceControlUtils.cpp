@@ -129,9 +129,7 @@ bool RunCommandInternalRaw(const FString& InCommand, const FString& InPathToGitB
 
 	FullCommand += LogableCommand;
 
-#if UE_BUILD_DEBUG
 	UE_LOG(LogSourceControl, Log, TEXT("RunCommand: 'git %s'"), *LogableCommand);
-#endif
 
 	FString PathToGitOrEnvBinary = InPathToGitBinary;
 #if PLATFORM_MAC
